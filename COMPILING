@@ -1,0 +1,12 @@
+OAMAS™ Build Instructions
+
+Written by Alexander Nicholi
+
+Copyright © 2021 Aquefir
+Released under BSD-2-Clause.
+
+
+
+-----
+
+Run util/getcosmo.sh, then run make. Parallel job control is supported.
