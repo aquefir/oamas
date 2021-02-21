@@ -1,0 +1,43 @@
+{
+	"configurations": [ {
+			"name": "Linux",
+			"includePath": [
+				"${workspaceFolder}/include",
+				"${workspaceFolder}/src"
+			],
+			"defines": [
+				"CFG_LINUX",
+				"CFG_AMD64",
+				"CFG_LILENDIAN",
+				"__VSCODE_INTELLISENSE__"
+			],
+			"forcedInclude": [
+				"${workspaceFolder}/etc/cosmo/cosmopolitan.h"
+			],
+			"compilerPath": "/usr/bin/gcc",
+			"cStandard": "c89",
+			"cppStandard": "c++11",
+			"intelliSenseMode": "gcc-x64"
+		}, {
+			"name": "Mac",
+			"includePath": [
+				"${workspaceFolder}/include",
+				"${workspaceFolder}/src"
+			],
+			"defines": [
+				"CFG_DARWIN",
+				"CFG_AMD64",
+				"CFG_LILENDIAN",
+				"__VSCODE_INTELLISENSE__"
+			],
+			"forcedInclude": [
+				"${workspaceFolder}/etc/cosmo/cosmopolitan.h"
+			],
+			"compilerPath": "/usr/bin/clang",
+			"cStandard": "c89",
+			"cppStandard": "c++11",
+			"intelliSenseMode": "clang-x64"
+		}
+	],
+	"version": 4
+}
