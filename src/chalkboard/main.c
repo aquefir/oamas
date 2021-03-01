@@ -8,16 +8,16 @@
 int main( int ac, char* av[] )
 {
 	FILE* f;
-	long sz;
+	long i;
+	int r;
 
-	f = fopen( "/dev/fb0", "r" );
+	f = fopen( "/dev/fb0", "r+" );
+	for( i = 0, r = 0; r != EOF; ++i)
+	{
+		r = fputc( 0, f );
+	}
 
-	fseek( f, 0L, SEEK_END );
-	sz = ftell( f );
-
-	fclose( f );
-
-	printf( "fb0 size: %ul bytes\n", sz );
+	printf( "i == %lu\n", i );
 
 	return 0;
 }
