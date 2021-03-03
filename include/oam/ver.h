@@ -5,8 +5,8 @@
  *                       Released under BSD-2-Clause.                       *
 \****************************************************************************/
 
-#ifndef INC_API_OAM_VER_H
-#define INC_API_OAM_VER_H
+#ifndef INC_API__OAM_VER_H
+#define INC_API__OAM_VER_H
 
 #define OAM_MAKEVER( _maj, _min, _pat ) \
 	( ( ( (_maj)&0x3FF ) << 22 ) | ( ( (_min)&0x3FF ) << 12 ) | \
@@ -19,4 +19,4 @@
 /* NOTE: patch version should always be set to 0 */
 #define OAM_API_VER OAM_MAKEVER( 1, 4, 0 )
 
-#endif /* INC_API_OAM_VER_H */
+#endif /* INC_API__OAM_VER_H */
