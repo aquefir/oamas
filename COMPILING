@@ -9,4 +9,19 @@ Released under BSD-2-Clause.
 
 -----
 
-Run util/getcosmo.sh, then run make. Parallel job control is supported.
+1. Install Slick.
+
+1.1. Installing on Arch Linux
+
+Use the AUR if possible, the package name is ‘slick’. Otherwise, follow the
+generic instructions for other Unices below.
+
+1.2. Installing on macOS, *BSD, et cetera
+
+Download the sources from <https://github.com/aquefir/slick/releases>, and
+run ‘util/install.sh’ with a POSIX-compatible shell.
+
+2. Run make.
+
+The Makefile will get everything it needs from Slick. Job control is
+supported if parallelisation is desired.
