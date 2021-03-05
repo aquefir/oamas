@@ -2,6 +2,8 @@
 	"configurations": [ {
 			"name": "Linux",
 			"includePath": [
+				"/usr/include",
+				"/usr/local/include",
 				"${workspaceFolder}/include",
 				"${workspaceFolder}/src"
 			],
@@ -18,9 +20,6 @@
 				"CFG_LONGSZ_64",
 				"__VSCODE_INTELLISENSE__"
 			],
-			"forcedInclude": [
-				"/opt/aq/lib/slick/cosmo/cosmopolitan.h"
-			],
 			"compilerPath": "/usr/bin/gcc",
 			"cStandard": "c89",
 			"cppStandard": "c++11",
@@ -28,6 +27,7 @@
 		}, {
 			"name": "Mac",
 			"includePath": [
+				"/usr/local/include",
 				"${workspaceFolder}/include",
 				"${workspaceFolder}/src"
 			],
@@ -44,10 +44,7 @@
 				"CFG_LONGSZ_64",
 				"__VSCODE_INTELLISENSE__"
 			],
-			"forcedInclude": [
-				"/opt/aq/lib/slick/cosmo/cosmopolitan.h"
-			],
-			"compilerPath": "/usr/bin/clang",
+			"compilerPath": "/usr/local/opt/llvm/bin/clang",
 			"cStandard": "c89",
 			"cppStandard": "c++11",
 			"intelliSenseMode": "clang-x64"
