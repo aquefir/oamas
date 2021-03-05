@@ -9,9 +9,6 @@ ifeq ($(strip $(AQ)),)
 $(error "AQ was not found in your environment. You need to install the Slick Makefiles from github.com/aquefir/slick to continue.")
 endif
 
-# Target APE only
-TP := APE
-
 include $(AQ)/lib/slick/base.mk
 
 # name of project. used in output binary naming
@@ -29,13 +26,13 @@ INCLUDES := include
 INCLUDEL := src
 
 # space-separated library name list
-LIBS    :=
+LIBS    := uni_log uni_err uni_himem
 LIBDIRS :=
 
 # ‘3P’ are in-tree 3rd-party dependencies
 # 3PLIBDIR is the base directory
 # 3PLIBS is the folder names in the base directory for each library
-3PLIBDIR := 3rdparty
+3PLIBDIR :=
 3PLIBS   :=
 
 # frameworks (macOS target only)
@@ -45,11 +42,13 @@ FWORKS :=
 SFILES    :=
 CFILES    := \
 	src/chalkboard/main.c \
+	src/display.c \
 	src/oam.c
 CPPFILES  :=
 PUBHFILES := \
 	include/oam/base.h \
-	include/oam/ver.h
+	include/oam/ver.h \
+	src/display.h
 PRVHFILES :=
 
 # test suite sources
