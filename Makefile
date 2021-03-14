@@ -43,13 +43,16 @@ SFILES    :=
 CFILES    := \
 	src/chalkboard/main.c \
 	src/display.c \
+	src/glad.c \
 	src/oam.c
 CPPFILES  :=
 PUBHFILES := \
 	include/oam/base.h \
-	include/oam/ver.h \
-	src/display.h
-PRVHFILES :=
+	include/oam/ver.h
+PRVHFILES := \
+	src/display.h \
+	src/glad.h \
+	src/khrplatform.h
 
 # test suite sources
 TES_CFILES    :=
