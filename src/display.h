@@ -21,7 +21,7 @@
 
 struct oam_display
 {
-	struct bound2 lw;
+	b32d2 lw;
 	void * pels;
 };
 
