@@ -28,7 +28,7 @@ enum
 struct oam_display_initopts
 {
 	b32d2 canvas_sz;
-	unsigned colspace : 3;
+	u8 colspace;
 };
 
 uni_err_t oam_display_init( const struct oam_display_initopts *,
