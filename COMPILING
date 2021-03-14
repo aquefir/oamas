@@ -21,7 +21,26 @@ generic instructions for other Unices below.
 Download the sources from <https://github.com/aquefir/slick/releases>, and
 run ‘util/install.sh’ with a POSIX-compatible shell.
 
-2. Run make.
+2. Install libraries.
 
-The Makefile will get everything it needs from Slick. Job control is
+2.1. Installing Hinterlib on Arch Linux
+
+Use the AUR if possible, the package name is ‘hinterlib’. Otherwise, follow
+the generic instructions for other Unices below. The minimum release is 1.4.1.
+
+2.2. Installing Hinterlib on macOS, *BSD, et cetera
+
+Download Hinterlib from <https://github.com/aquefir/hinterlib/releases>, and
+run ‘common/util/install.sh’ with a POSIX-compatible shell. The $PREFIX
+variable can be overridden as desired and defaults to ‘/usr/local’.
+
+2.3. Other libraries
+
+OAMAS™ requires a working OpenGL runtime with support for OpenGL ES 2.0. It
+uses an instance of GLAD to this end. As long as GLES 2.0 ought to be present,
+no action is required to detect or integrate it.
+
+3. Run make.
+
+The Makefile will get everything it needs via Slick. Job control is
 supported if parallelisation is desired.
