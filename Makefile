@@ -26,7 +26,7 @@ INCLUDES := include
 INCLUDEL := src
 
 # space-separated library name list
-LIBS    := uni_log uni_err uni_himem
+LIBS    := uni_log uni_err uni_himem GLFW
 LIBDIRS :=
 
 # ‘3P’ are in-tree 3rd-party dependencies
@@ -43,14 +43,18 @@ SFILES    :=
 CFILES    := \
 	src/chalkboard/main.c \
 	src/display.c \
+	src/eventer.c \
 	src/glad.c \
 	src/oam.c
 CPPFILES  :=
 PUBHFILES := \
 	include/oam/base.h \
+	include/oam/display.h \
+	include/oam/eventer.h \
 	include/oam/ver.h
 PRVHFILES := \
 	src/display.h \
+	src/eventer.h \
 	src/glad.h \
 	src/khrplatform.h
 

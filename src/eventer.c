@@ -5,25 +5,30 @@
  *                       Released under BSD-2-Clause.                       *
 \****************************************************************************/
 
-#ifndef INC__OAM_DISPLAY_H
-#define INC__OAM_DISPLAY_H
+#include "eventer.h"
 
-#define GLFW_INCLUDE_NONE
+#include <uni/err.h>
 
-/* parent header */
-#include <oam/display.h>
+#include "display.h"
 
-/* foreign headers */
-#include <GLFW/glfw3.h>
-
-/* local headers */
-#include "glad.h"
-
-struct oam_display
+int oam_mainloop( struct oam_display * disp, struct oam_events * evs )
 {
-	b32d2 lw;
-	void * pels;
-	GLFWwindow * win;
-};
+	if( !disp )
+	{
+		uni_die( );
+	}
 
-#endif /* INC__OAM_DISPLAY_H */
+	if( glfwWindowShouldClose( disp->win ) )
+	{
+		glfwTerminate( );
+
+		return 1;
+	}
+
+	glClear( GL_COLOR_BUFFER_BIT );
+
+	glfwSwapBuffers( disp->win );
+	glfwPollEvents( );
+
+	return 0;
+}

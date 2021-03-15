@@ -5,25 +5,13 @@
  *                       Released under BSD-2-Clause.                       *
 \****************************************************************************/
 
-#ifndef INC__OAM_DISPLAY_H
-#define INC__OAM_DISPLAY_H
+#ifndef INC_API__OAM_EVENTER_H
+#define INC_API__OAM_EVENTER_H
 
-#define GLFW_INCLUDE_NONE
-
-/* parent header */
 #include <oam/display.h>
 
-/* foreign headers */
-#include <GLFW/glfw3.h>
+struct oam_events;
 
-/* local headers */
-#include "glad.h"
+int oam_mainloop( struct oam_display *, struct oam_events * );
 
-struct oam_display
-{
-	b32d2 lw;
-	void * pels;
-	GLFWwindow * win;
-};
-
-#endif /* INC__OAM_DISPLAY_H */
+#endif /* INC_API__OAM_EVENTER_H */
