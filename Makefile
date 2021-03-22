@@ -44,6 +44,7 @@ CFILES    := \
 	src/chalkboard/main.c \
 	src/display.c \
 	src/eventer.c \
+	src/fbgraphics.c \
 	src/glad.c \
 	src/oam.c
 CPPFILES  :=
@@ -55,6 +56,8 @@ PUBHFILES := \
 PRVHFILES := \
 	src/display.h \
 	src/eventer.h \
+	src/fbg_glfw.h \
+	src/fbgraphics.h \
 	src/glad.h \
 	src/khrplatform.h
 
