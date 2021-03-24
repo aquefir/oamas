@@ -13,10 +13,11 @@
 
 static void promenade( void )
 {
-	struct oam_display * disp;
-	struct oam_events * evs;
-	uni_err_t e;
+	struct oam_display * disp = NULL;
+	struct oam_events * evs   = NULL;
+	uni_err_t e               = 0;
 	struct oam_display_initopts disp_initopts;
+
 	disp_initopts.canvas_sz.val.x = 1280;
 	disp_initopts.canvas_sz.val.y = 720;
 	disp_initopts.canvas_sz.is    = 1;
@@ -24,7 +25,7 @@ static void promenade( void )
 	disp_initopts.colspace.is     = 1;
 	disp_initopts.title           = "OAM Chalkboard";
 
-	e = oam_display_init( &disp_initopts, &disp );
+	e = oam_display_init( disp_initopts, &disp );
 
 	if( e )
 	{

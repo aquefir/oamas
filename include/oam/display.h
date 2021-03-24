@@ -14,28 +14,19 @@
 #include <uni/types/opt/int.h>
 #include <uni/types/opt/bound.h>
 
-struct oam_display;
+#include <oam/colspace.h>
 
-enum
-{
-	OAM_COLSPACE_RGB24,
-	OAM_COLSPACE_RGBA32,
-	OAM_COLSPACE_RGB555,
-	OAM_COLSPACE_RGB565,
-	OAM_COLSPACE_RGBA5551,
-	OAM_COLSPACE_RGBA4444,
-	MAX_OAM_COLSPACE
-};
+struct oam_display;
 
 struct oam_display_initopts
 {
 	UNI_OPTION( b32d2 ) canvas_sz;
-	UNI_OPTION( u8 ) colspace;
+	UNI_OPTION( oam_colspace_t ) colspace;
 	char * title;
 };
 
 uni_err_t oam_display_init(
-	const struct oam_display_initopts *, struct oam_display ** );
+	struct oam_display_initopts, struct oam_display ** );
 void oam_display_fini( struct oam_display * );
 
 uni_err_t oam_display_getlw( const struct oam_display *, b32d2 * );

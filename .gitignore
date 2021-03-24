@@ -10,6 +10,8 @@
 *.obj
 *.gcno
 *.gcda
+*.profraw
+*.profdata
 *.a
 *.lib
 *.so*

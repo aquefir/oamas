@@ -50,6 +50,7 @@ CFILES    := \
 CPPFILES  :=
 PUBHFILES := \
 	include/oam/base.h \
+	include/oam/colspace.h \
 	include/oam/display.h \
 	include/oam/eventer.h \
 	include/oam/ver.h

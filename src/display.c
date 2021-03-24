@@ -18,9 +18,9 @@ void oam_display_fini( struct oam_display * d )
 }
 
 uni_err_t oam_display_init(
-	const struct oam_display_initopts * opts, struct oam_display ** d )
+	struct oam_display_initopts opts, struct oam_display ** d )
 {
-	if( !opts || !d )
+	if( !d )
 	{
 		uni_die( );
 	}
@@ -30,15 +30,15 @@ uni_err_t oam_display_init(
 		u32 w = 640, l = 360;
 		char * title = "OAMAS demo";
 
-		if( opts->title != NULL )
+		if( opts.title != NULL )
 		{
-			title = opts->title;
+			title = opts.title;
 		}
 
-		if( opts->canvas_sz.is )
+		if( opts.canvas_sz.is )
 		{
-			w = opts->canvas_sz.val.x;
-			l = opts->canvas_sz.val.y;
+			w = opts.canvas_sz.val.x;
+			l = opts.canvas_sz.val.y;
 		}
 
 		if( !glfwInit( ) )
@@ -64,14 +64,15 @@ uni_err_t oam_display_init(
 		glfwMakeContextCurrent( win );
 
 		{
-			struct oam_display disp;
+			struct oam_display * disp =
+				uni_alloc( sizeof( struct oam_display ) );
 
-			disp.lw.x = w;
-			disp.lw.y = l;
-			disp.pels = uni_alloc( sizeof( u32 ) * w * l );
-			disp.win  = win;
+			disp->lw.x = w;
+			disp->lw.y = l;
+			disp->pels = uni_alloc( sizeof( u32 ) * w * l );
+			disp->win  = win;
 
-			uni_memcpy( d, &disp, sizeof( struct oam_display ) );
+			*d = disp;
 		}
 	}
 
