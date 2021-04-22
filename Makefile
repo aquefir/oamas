@@ -44,6 +44,7 @@ CFILES    := \
 	src/chalkboard/main.c \
 	src/display.c \
 	src/eventer.c \
+	src/fbg_glfw.c \
 	src/fbgraphics.c \
 	src/glad.c \
 	src/oam.c

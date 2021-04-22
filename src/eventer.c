@@ -8,27 +8,44 @@
 #include "eventer.h"
 
 #include <uni/err.h>
+#include <uni/types/float.h>
 
 #include "display.h"
+#include "fbg_glfw.h"
 
 int oam_mainloop( struct oam_display * disp, struct oam_events * evs )
 {
+	f32 x = 0, y = 0, velx = 3.4, vely = 3.425;
+
 	if( !disp )
 	{
 		uni_die( );
 	}
 
-	if( glfwWindowShouldClose( disp->win ) )
+	if( fbg_glfwShouldClose( disp->fbg ) )
 	{
-		glfwTerminate( );
-
 		return 1;
 	}
 
-	glClear( GL_COLOR_BUFFER_BIT );
+	fbg_glfwClear( );
 
-	glfwSwapBuffers( disp->win );
-	glfwPollEvents( );
+	fbg_clear( disp->fbg, 0 );
+	fbg_rect( disp->fbg, x, x, 40, 40, 255, 0, 0 );
+	fbg_draw( disp->fbg );
+	fbg_flip( disp->fbg );
+
+	x += velx;
+	y += vely;
+
+	if( x <= 0 || x > disp->fbg->width - 40 )
+	{
+		velx = -velx;
+	}
+
+	if( y <= 0 || y > disp->fbg->height - 40 )
+	{
+		vely = -vely;
+	}
 
 	return 0;
 }

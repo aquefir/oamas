@@ -26,7 +26,7 @@ uni_err_t oam_display_init(
 	}
 
 	{
-		GLFWwindow * win;
+		struct _fbg * fbg;
 		u32 w = 640, l = 360;
 		char * title = "OAMAS demo";
 
@@ -49,19 +49,15 @@ uni_err_t oam_display_init(
 				UNI_ERR_LVL_FATAL );
 		}
 
-		win = glfwCreateWindow( (int)w, (int)l, title, NULL, NULL );
+		fbg = fbg_glfwSetup( w, l, 3, title, 0, 0 );
 
-		if( !win )
+		if( !fbg )
 		{
-			glfwTerminate( );
-
 			return UNI_ERRCODE_MAKE( UNI_ERR_DESC_SUCCESS,
 				UNI_ERR_MOD_COMMON,
 				UNI_ERR_EMASK_OORES,
 				UNI_ERR_LVL_FATAL );
 		}
-
-		glfwMakeContextCurrent( win );
 
 		{
 			struct oam_display * disp =
@@ -70,7 +66,7 @@ uni_err_t oam_display_init(
 			disp->lw.x = w;
 			disp->lw.y = l;
 			disp->pels = uni_alloc( sizeof( u32 ) * w * l );
-			disp->win  = win;
+			disp->win  = fbg;
 
 			*d = disp;
 		}

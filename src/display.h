@@ -12,18 +12,14 @@
 
 /* parent header */
 #include <oam/display.h>
-
-/* foreign headers */
-#include <GLFW/glfw3.h>
-
-/* local headers */
-#include "glad.h"
+#include <SDL2/SDL.h>
 
 struct oam_display
 {
 	b32d2 lw;
 	void * pels;
-	GLFWwindow * win;
+	SDL_Renderer * ren;
+	SDL_Window * win;
 };
 
 #endif /* INC__OAM_DISPLAY_H */

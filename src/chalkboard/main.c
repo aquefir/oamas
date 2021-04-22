@@ -21,8 +21,7 @@ static void promenade( void )
 	disp_initopts.canvas_sz.val.x = 1280;
 	disp_initopts.canvas_sz.val.y = 720;
 	disp_initopts.canvas_sz.is    = 1;
-	disp_initopts.colspace.val    = OAM_COLSPACE_RGB24;
-	disp_initopts.colspace.is     = 1;
+	disp_initopts.colspace.is     = 0;
 	disp_initopts.title           = "OAM Chalkboard";
 
 	e = oam_display_init( disp_initopts, &disp );
